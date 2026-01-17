@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Участки у Озера + Дома под ключ | Ипотека 6%</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a5276;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --quality: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --telegram: #0088cc;
+            --whatsapp: #25d366;
+            --wood: #8B4513;
+            --water: #2980b9;
+            --family: #e91e63;
+            --mountain: #16a085;
+            --distance-gradient: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            --size-gradient: linear-gradient(135deg, #27ae60 0%, #16a085 100%);
+            --sber: #1a9f29;
+            --vtb: #0a2b75;
+            --alfa: #ef3124;
+            --sofkom: #005b9d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e8f4f8 100%);
+        }
+
+        /* Бейджи */
+        .quality-badge {
+            background: var(--size-gradient);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .material-badge {
+            background: linear-gradient(135deg, var(--wood) 0%, #A0522D 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .water-badge {
+            background: linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .water-badge::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+            transform: rotate(30deg);
+            animation: waterFlow 3s infinite linear;
+        }
+
+        @keyframes waterFlow {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        .family-badge {
+            background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .mountain-badge {
+            background: linear-gradient(135deg, #16a085 0%, #0d5c4a 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .distance-badge {
+            background: var(--distance-gradient);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+        }
+
+        .distance-badge::before {
+            content: '↔';
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        .size-badge {
+            background: var(--size-gradient);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+            position: relative;
+        }
+
+        .size-badge::before {
+            content: '⌀';
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        /* Бейджи типов домов */
+        .gasbeton-badge {
+            background: linear-gradient(135deg, #7f8c8d 0%, #34495e 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .frame-badge {
+            background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .barn-badge {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        /* Логотипы банков */
+        .bank-logo {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+            height: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bank-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .bank-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .bank-logo:hover::before {
+            opacity: 1;
+        }
+
+        .bank-sber {
+            border-color: rgba(26, 159, 41, 0.3);
+        }
+
+        .bank-sber::before {
+            background: var(--sber);
+        }
+
+        .bank-sber:hover {
+            border-color: var(--sber);
+        }
+
+        .bank-sber .bank-name {
+            color: var(--sber);
+        }
+
+        .bank-vtb {
+            border-color: rgba(10, 43, 117, 0.3);
+        }
+
+        .bank-vtb::before {
+            background: var(--vtb);
+        }
+
+        .bank-vtb:hover {
+            border-color: var(--vtb);
+        }
+
+        .bank-vtb .bank-name {
+            color: var(--vtb);
+        }
+
+        .bank-alfa {
+            border-color: rgba(239, 49, 36, 0.3);
+        }
+
+        .bank-alfa::before {
+            background: var(--alfa);
+        }
+
+        .bank-alfa:hover {
+            border-color: var(--alfa);
+        }
+
+        .bank-alfa .bank-name {
+            color: var(--alfa);
+        }
+
+        .bank-sofkom {
+            border-color: rgba(0, 91, 157, 0.3);
+        }
+
+        .bank-sofkom::before {
+            background: var(--sofkom);
+        }
+
+        .bank-sofkom:hover {
+            border-color: var(--sofkom);
+        }
+
+        .bank-sofkom .bank-name {
+            color: var(--sofkom);
+        }
+
+        .bank-content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .bank-name {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bank-status {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .bank-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Header */
+        .header {
+            background: var(--distance-gradient);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            border-bottom: 3px solid rgba(255,255,255,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .logo i {
+            color: var(--accent);
+            text-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+        }
+
+        .nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .nav a:hover {
+            color: var(--accent);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .contacts-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .phone-btn, .telegram-btn {
+            background: var(--accent);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s;
+            white-space: nowrap;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+        }
+
+        .telegram-btn {
+            background: var(--telegram);
+        }
+
+        .phone-btn:hover, .telegram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(41, 128, 185, 0.9)), 
+                        url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center 70%;
+            background-attachment: scroll;
+            color: white;
+            padding: 150px 0 60px;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(231, 76, 60, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .engraving {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.15;
+            pointer-events: none;
+            background-image: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><path d="M0,300 Q100,150 200,250 T400,150 T600,200 T800,100 L800,400 L0,400 Z" fill="white" opacity="0.3"/></svg>'),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><path d="M0,350 C150,300 200,380 400,350 S650,400 800,350 L800,400 L0,400 Z" fill="white" opacity="0.2"/></svg>'),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><g opacity="0.1"><circle cx="100" cy="100" r="5" fill="white"/><circle cx="700" cy="150" r="8" fill="white"/><circle cx="300" cy="80" r="6" fill="white"/></g></svg>');
+            background-size: 
+                100% 100%,
+                100% 30%,
+                auto;
+            background-position: 
+                center center,
+                center bottom,
+                center center;
+            background-repeat: no-repeat;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            line-height: 1.2;
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+            display: block;
+            font-size: 2rem;
+            margin-top: 0.5rem;
+            text-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+        }
+
+        .hero p {
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            max-width: 600px;
+            margin: 1.5rem auto;
+        }
+
+        .hero-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+        }
+
+        .hero-badge-item:hover {
+            transform: translateX(5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .hero-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Секции */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--distance-gradient);
+            border-radius: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            padding: 0 10px;
+        }
+
+        .section-title p {
+            color: var(--secondary);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        /* Участки */
+        .plots-section {
+            padding: 60px 0;
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plots-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--distance-gradient);
+        }
+
+        .plots-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 0 10px;
+        }
+
+        .plot-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .plot-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-color: var(--water);
+        }
+
+        .plot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--distance-gradient);
+        }
+
+        .plot-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .plot-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 1rem 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Типы домов */
+        .house-types {
+            padding: 60px 0;
+            background: white;
+            position: relative;
+        }
+
+        .house-types::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--wood), #7f8c8d, #d35400);
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 0 10px;
+        }
+
+        .type-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 2px solid #e0e0e0;
+            position: relative;
+        }
+
+        .type-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .type-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .type-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            background: #f5f5f5;
+        }
+
+        .type-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+        }
+
+        .type-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .type-card:hover .type-image img {
+            transform: scale(1.05);
+        }
+
+        .type-info {
+            padding: 1.2rem;
+        }
+
+        .type-price {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .type-features {
+            display: flex;
+            gap: 0.8rem;
+            margin: 0.8rem 0;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--light);
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border: 1px solid #e0e0e0;
+        }
+
+        .feature i {
+            color: var(--primary);
+        }
+
+        /* Готовые дома */
+        .ready-houses {
+            padding: 60px 0;
+            background: var(--light);
+            position: relative;
+        }
+
+        .ready-houses::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--quality), var(--secondary));
+        }
+
+        .ready-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 0 10px;
+        }
+
+        .ready-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 2px solid #e0e0e0;
+            position: relative;
+        }
+
+        .ready-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-color: var(--accent);
+        }
+
+        .ready-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--quality);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .ready-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background: #f5f5f5;
+        }
+
+        .ready-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+        }
+
+        .ready-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .ready-card:hover .ready-image img {
+            transform: scale(1.05);
+        }
+
+        .ready-info {
+            padding: 1.2rem;
+        }
+
+        .ready-price {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Калькулятор */
+        .calculator-section {
+            padding: 60px 0;
+            background: var(--light);
+            position: relative;
+        }
+
+        .calculator-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: start;
+            padding: 0 10px;
+        }
+
+        .calc-controls {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-controls::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--distance-gradient);
+        }
+
+        .calc-group {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+
+        .calc-group:last-child {
+            border-bottom: none;
+        }
+
+        .calc-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .calc-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            background: var(--distance-gradient);
+            border-radius: 4px;
+            outline: none;
+            margin: 1rem 0;
+        }
+
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .calc-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .slider-value {
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+            background: rgba(26, 82, 118, 0.1);
+            padding: 6px 12px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 0 auto;
+            border: 2px solid rgba(26, 82, 118, 0.2);
+        }
+
+        .house-type-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .house-type-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .house-type-option:hover {
+            transform: translateX(5px);
+            background: rgba(41, 128, 185, 0.05);
+        }
+
+        .house-type-option.selected {
+            border-color: var(--water);
+            background: rgba(41, 128, 185, 0.1);
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.1);
+        }
+
+        .house-type-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--water);
+        }
+
+        .house-type-description {
+            flex: 1;
+        }
+
+        .house-type-description div:first-child {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .house-type-price {
+            font-weight: bold;
+            color: var(--water);
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .plot-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .plot-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .plot-option:hover {
+            border-color: var(--water);
+            background: rgba(41, 128, 185, 0.05);
+            transform: translateX(5px);
+        }
+
+        .plot-option.selected {
+            border-color: var(--water);
+            background: rgba(41, 128, 185, 0.1);
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.1);
+        }
+
+        .plot-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--water);
+        }
+
+        .plot-description {
+            flex: 1;
+        }
+
+        .plot-description div:first-child {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .plot-price-small {
+            font-weight: bold;
+            color: var(--water);
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .calc-result-box {
+            background: var(--distance-gradient);
+            color: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(26, 82, 118, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-result-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+        }
+
+        .total-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            color: var(--accent);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Ипотека */
+        .mortgage-section {
+            padding: 60px 0;
+            background: white;
+            position: relative;
+        }
+
+        .mortgage-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--quality), var(--mountain));
+        }
+
+        .mortgage-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 0 10px;
+        }
+
+        .mortgage-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mortgage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--size-gradient);
+        }
+
+        .mortgage-card:hover {
+            border-color: var(--quality);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .mortgage-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* О нас */
+        .about-section {
+            padding: 60px 0;
+            background: white;
+            position: relative;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--quality), var(--secondary), var(--telegram));
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-top: 1.5rem;
+            padding: 0 10px;
+        }
+
+        .banks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        /* Floating buttons */
+        .floating-buttons {
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .floating-btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .floating-phone {
+            background: var(--accent);
+        }
+
+        .floating-telegram {
+            background: var(--telegram);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--distance-gradient);
+            color: white;
+            padding: 40px 0 20px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 0 10px;
+        }
+
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Сетка расстояний в фоне */
+        .distance-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.05;
+            background-image: 
+                linear-gradient(to right, var(--primary) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--primary) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Гравировка в секциях */
+        .plots-section, .house-types, .ready-houses, .calculator-section, .mortgage-section, .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plots-section::after, .house-types::after, .ready-houses::after, .calculator-section::after, .mortgage-section::after, .about-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.03;
+            background-image: 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><path d="M0,300 Q100,150 200,250 T400,150 T600,200 T800,100 L800,400 L0,400 Z" fill="%231a5276" opacity="0.5"/></svg>');
+            background-size: 100% 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 0.8rem 0;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
+            }
+            
+            .nav {
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            
+            .contacts-header {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+            }
+            
+            .hero {
+                padding: 120px 0 50px;
+                margin-top: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 span {
+                font-size: 1.7rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+                padding: 12px;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-badge-item {
+                padding: 10px;
+                gap: 8px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .plots-cards,
+            .types-grid,
+            .ready-grid,
+            .mortgage-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .type-image,
+            .ready-image {
+                height: 180px;
+            }
+            
+            .banks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .bank-logo {
+                height: 100px;
+                padding: 1rem;
+            }
+            
+            .bank-name {
+                font-size: 1.2rem;
+            }
+            
+            .bank-icon {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .hero-badges {
+                gap: 0.6rem;
+            }
+            
+            .plot-card,
+            .type-card,
+            .ready-card,
+            .mortgage-card {
+                padding: 1.2rem;
+            }
+            
+            .total-price {
+                font-size: 1.8rem;
+            }
+            
+            .floating-buttons {
+                right: 10px;
+                bottom: 10px;
+            }
+            
+            .floating-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Фоновая сетка расстояний -->
+    <div class="distance-grid"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-route"></i>
+                    <i class="fas fa-ruler-combined"></i>
+                    ДомУОзера
+                </div>
+                <nav class="nav">
+                    <a href="#plots">Участки</a>
+                    <a href="#types">Типы домов</a>
+                    <a href="#ready">Готовые дома</a>
+                    <a href="#calculator">Калькулятор</a>
+                    <a href="#mortgage">Ипотека</a>
+                    <a href="#about">О нас</a>
+                </nav>
+                <div class="contacts-header">
+                    <a href="tel:8927779224" class="phone-btn">
+                        <i class="fas fa-phone"></i>
+                        8-927-779-22-24
+                    </a>
+                    <a href="https://t.me/vlast_truda_dom" target="_blank" class="telegram-btn">
+                        <i class="fab fa-telegram"></i>
+                        Telegram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="engraving"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>УЧАСТКИ У КРАСИВОГО ОЗЕРА<br><span>+ ДОМА ПОД КЛЮЧ</span></h1>
+                
+                <div class="hero-badges">
+                    <div class="hero-badge-item">
+                        <div class="distance-badge">
+                            <i class="fas fa-route"></i>
+                            <div>
+                                <div>Оптимальные расстояния до города</div>
+                                <div>30 км • 40 минут</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-badge-item">
+                        <div class="size-badge">
+                            <i class="fas fa-ruler-combined"></i>
+                            <div>
+                                <div>Идеальные размеры участков</div>
+                                <div>7 соток</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-badge-item">
+                        <div class="water-badge">
+                            <i class="fas fa-water"></i>
+                            <div>
+                                <div>Береговые линии у Озера</div>
+                                <div>1-я береговая - 1 400 000 ₽ | 2-я береговая - 1 100 000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-badge-item">
+                        <div class="family-badge">
+                            <i class="fas fa-child"></i>
+                            <div>
+                                <div>Семейная ипотека 6%</div>
+                                <div>Для семей с детьми до 7 лет</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>Рассчитайте оптимальное расстояние до города, выберите участок 7 соток у Озера и получите дом под ключ с ипотекой 6%. Профессиональный подход к каждому метру и километру!</p>
+                
+                <div class="hero-contacts">
+                    <a href="#calculator" class="cta-button pulse">
+                        <i class="fas fa-calculator"></i> Рассчитать проект
+                    </a>
+                    <a href="#contact" class="cta-button" style="background: var(--telegram); border-color: var(--telegram);">
+                        <i class="fab fa-telegram"></i> Консультация по расстояниям
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Участки -->
+    <section class="plots-section" id="plots">
+        <div class="container">
+            <div class="section-title">
+                <h2>Береговые участки с оптимальными параметрами</h2>
+                <p>Точные расстояния и размеры для комфортной жизни</p>
+            </div>
+            
+            <div class="plots-cards">
+                <div class="plot-card animate-card">
+                    <h3>1-я береговая линия</h3>
+                    <div class="distance-badge">
+                        <i class="fas fa-route"></i> 30 км до города
+                    </div>
+                    <div class="size-badge">
+                        <i class="fas fa-ruler-combined"></i> 7 соток
+                    </div>
+                    <div class="water-badge">
+                        <i class="fas fa-water"></i> 50 м до воды
+                    </div>
+                    <div class="plot-price">1 400 000 ₽</div>
+                    <p>Участки первого эшелона с минимальным расстоянием до воды.</p>
+                    <div style="margin-top: 1rem; text-align: left;">
+                        <p><i class="fas fa-route" style="color: var(--primary);"></i> <strong>30 км</strong> до центра города</p>
+                        <p><i class="fas fa-ruler-combined" style="color: var(--quality);"></i> <strong>7 соток</strong> площадь</p>
+                        <p><i class="fas fa-water" style="color: var(--water);"></i> <strong>50 м</strong> до берега озера</p>
+                        <p><i class="fas fa-road" style="color: var(--accent);"></i> <strong>40 минут</strong> на машине</p>
+                    </div>
+                </div>
+                
+                <div class="plot-card animate-card">
+                    <h3>2-я береговая линия</h3>
+                    <div class="distance-badge">
+                        <i class="fas fa-route"></i> 30 км до города
+                    </div>
+                    <div class="size-badge">
+                        <i class="fas fa-ruler-combined"></i> 7 соток
+                    </div>
+                    <div class="water-badge">
+                        <i class="fas fa-water"></i> 100-200 м до воды
+                    </div>
+                    <div class="plot-price">1 100 000 ₽</div>
+                    <p>Оптимальное соотношение расстояния, размера и цены.</p>
+                    <div style="margin-top: 1rem; text-align: left;">
+                        <p><i class="fas fa-route" style="color: var(--primary);"></i> <strong>30 км</strong> до центра города</p>
+                        <p><i class="fas fa-ruler-combined" style="color: var(--quality);"></i> <strong>7 соток</strong> площадь</p>
+                        <p><i class="fas fa-water" style="color: var(--water);"></i> <strong>100-200 м</strong> до берега озера</p>
+                        <p><i class="fas fa-road" style="color: var(--accent);"></i> <strong>40 минут</strong> на машине</p>
+                    </div>
+                </div>
+                
+                <div class="plot-card animate-card">
+                    <h3>Эконом класс</h3>
+                    <div class="distance-badge">
+                        <i class="fas fa-route"></i> 30 км до города
+                    </div>
+                    <div class="size-badge">
+                        <i class="fas fa-ruler-combined"></i> 7 соток
+                    </div>
+                    <div class="quality-badge">
+                        <i class="fas fa-home"></i> Заселен 10+ лет
+                    </div>
+                    <div class="plot-price" style="color: var(--quality);">1 000 000 ₽</div>
+                    <p>Оптимальное расстояние при экономии бюджета.</p>
+                    <div style="margin-top: 1rem; text-align: left;">
+                        <p><i class="fas fa-route" style="color: var(--primary);"></i> <strong>30 км</strong> до центра города</p>
+                        <p><i class="fas fa-ruler-combined" style="color: var(--quality);"></i> <strong>7 соток</strong> площадь</p>
+                        <p><i class="fas fa-road" style="color: var(--accent);"></i> <strong>40 минут</strong> на машине</p>
+                        <p><i class="fas fa-store" style="color: var(--secondary);"></i> <strong>2 км</strong> до магазина</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Типы домов -->
+    <section class="house-types" id="types">
+        <div class="container">
+            <div class="section-title">
+                <h2>Типы домов</h2>
+                <p>Выберите подходящую технологию строительства</p>
+            </div>
+            
+            <div class="types-grid">
+                <!-- Газобетон -->
+                <div class="type-card animate-card">
+                    <div class="type-badge" style="background: linear-gradient(135deg, #7f8c8d 0%, #34495e 100%);">
+                        Газобетон
+                    </div>
+                    <div class="type-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-963ed7476daf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дом из газобетона">
+                    </div>
+                    <div class="type-info">
+                        <h3>Газобетонные дома</h3>
+                        <div class="gasbeton-badge">
+                            <i class="fas fa-cube"></i> Прочный и теплый
+                        </div>
+                        <div class="type-price">От 60 000 ₽/м²</div>
+                        
+                        <div class="type-features">
+                            <span class="feature"><i class="fas fa-thermometer-half"></i> Теплоэффективность</span>
+                            <span class="feature"><i class="fas fa-shield-alt"></i> Долговечность</span>
+                            <span class="feature"><i class="fas fa-snowflake"></i> Звукоизоляция</span>
+                        </div>
+                        
+                        <p>Черновая отделка: <strong>60 000 ₽/м²</strong><br>
+                        С ремонтом под ключ: <strong>+20 000 ₽/м²</strong></p>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(127, 140, 141, 0.1); border-radius: 10px;">
+                            <p><strong>Преимущества:</strong></p>
+                            <p><i class="fas fa-check"></i> Высокая прочность</p>
+                            <p><i class="fas fa-check"></i> Отличная теплоизоляция</p>
+                            <p><i class="fas fa-check"></i> Пожаробезопасность</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Каркасный -->
+                <div class="type-card animate-card">
+                    <div class="type-badge" style="background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);">
+                        Каркасный
+                    </div>
+                    <div class="type-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Каркасный дом">
+                    </div>
+                    <div class="type-info">
+                        <h3>Каркасные дома</h3>
+                        <div class="frame-badge">
+                            <i class="fas fa-bolt"></i> Быстрое строительство
+                        </div>
+                        <div class="type-price">55 000 ₽/м² под ключ</div>
+                        
+                        <div class="type-features">
+                            <span class="feature"><i class="fas fa-clock"></i> Быстрое строительство</span>
+                            <span class="feature"><i class="fas fa-leaf"></i> Энергоэффективность</span>
+                            <span class="feature"><i class="fas fa-home"></i> Всесезонность</span>
+                        </div>
+                        
+                        <p>Полностью под ключ: <strong>55 000 ₽/м²</strong><br>
+                        Срок строительства: <strong>2-3 месяца</strong></p>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(211, 84, 0, 0.1); border-radius: 10px;">
+                            <p><strong>Преимущества:</strong></p>
+                            <p><i class="fas fa-check"></i> Быстрое строительство</p>
+                            <p><i class="fas fa-check"></i> Отличная теплоизоляция</p>
+                            <p><i class="fas fa-check"></i> Легкий фундамент</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Барнхаус -->
+                <div class="type-card animate-card">
+                    <div class="type-badge" style="background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);">
+                        Барнхаус
+                    </div>
+                    <div class="type-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Барнхаус">
+                    </div>
+                    <div class="type-info">
+                        <h3>Барнхаусы</h3>
+                        <div class="barn-badge">
+                            <i class="fas fa-tree"></i> Современный дизайн
+                        </div>
+                        <div class="type-price">От 44 000 ₽/м²</div>
+                        
+                        <div class="type-features">
+                            <span class="feature"><i class="fas fa-expand-arrows-alt"></i> Просторные помещения</span>
+                            <span class="feature"><i class="fas fa-sun"></i> Панорамное остекление</span>
+                            <span class="feature"><i class="fas fa-paint-brush"></i> Современный дизайн</span>
+                        </div>
+                        
+                        <p>Современный стиль: <strong>44 000 ₽/м²</strong><br>
+                        С террасой: <strong>+200 000 ₽</strong></p>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(139, 69, 19, 0.1); border-radius: 10px;">
+                            <p><strong>Преимущества:</strong></p>
+                            <p><i class="fas fa-check"></i> Современный дизайн</p>
+                            <p><i class="fas fa-check"></i> Просторные помещения</p>
+                            <p><i class="fas fa-check"></i> Энергоэффективность</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Готовые дома -->
+    <section class="ready-houses" id="ready">
+        <div class="container">
+            <div class="section-title">
+                <h2>Готовые дома</h2>
+                <p>Уже построенные дома на участках</p>
+            </div>
+            
+            <div class="ready-grid">
+                <!-- Дом 1 -->
+                <div class="ready-card animate-card">
+                    <div class="ready-badge">1-этажный</div>
+                    <div class="ready-image">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дом 1">
+                    </div>
+                    <div class="ready-info">
+                        <h3>Дом 120 м²</h3>
+                        <div class="size-badge">
+                            <i class="fas fa-ruler-combined"></i> 120 м² • 5.89 соток
+                        </div>
+                        <div class="ready-price">7 980 000 ₽</div>
+                        
+                        <div class="type-features">
+                            <span class="feature"><i class="fas fa-home"></i> 1 этаж</span>
+                            <span class="feature"><i class="fas fa-ruler"></i> 120 м²</span>
+                            <span class="feature"><i class="fas fa-expand"></i> 5.89 соток</span>
+                        </div>
+                        
+                        <p>Предчистовая отделка: <strong>66 500 ₽/м²</strong><br>
+                        Полная стоимость: <strong>7 980 000 ₽</strong></p>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(41, 128, 185, 0.1); border-radius: 10px;">
+                            <p><strong>Ипотека 6% на 20 лет:</strong></p>
+                            <p>Первый взнос: <strong>1 596 000 ₽</strong> (20%)</p>
+                            <p>Ежемесячный платёж: <strong>47 880 ₽</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Дом 2 -->
+                <div class="ready-card animate-card">
+                    <div class="ready-badge">1-этажный</div>
+                    <div class="ready-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дом 2">
+                    </div>
+                    <div class="ready-info">
+                        <h3>Дом 140 м²</h3>
+                        <div class="size-badge">
+                            <i class="fas fa-ruler-combined"></i> 140 м² • 13.2 соток
+                        </div>
+                        <div class="ready-price">9 310 000 ₽</div>
+                        
+                        <div class="type-features">
+                            <span class="feature"><i class="fas fa-home"></i> 1 этаж</span>
+                            <span class="feature"><i class="fas fa-ruler"></i> 140 м²</span>
+                            <span class="feature"><i class="fas fa-expand"></i> 13.2 соток</span>
+                        </div>
+                        
+                        <p>Предчистовая отделка: <strong>66 500 ₽/м²</strong><br>
+                        Полная стоимость: <strong>9 310 000 ₽</strong></p>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(41, 128, 185, 0.1); border-radius: 10px;">
+                            <p><strong>Ипотека 6% на 20 лет:</strong></p>
+                            <p>Первый взнос: <strong>1 862 000 ₽</strong> (20%)</p>
+                            <p>Ежемесячный платёж: <strong>55 860 ₽</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Дом 3 -->
+                <div class="ready-card animate-card">
+                    <div class="ready-badge">1-этажный</div>
+                    <div class="ready-image">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дом 3">
+                    </div>
+                    <div class="ready-info">
+                        <h3>Дом 140 м² с террасой</h3>
+                        <div class="size-badge">
+                            <i class="fas fa-ruler-combined"></i> 140 м² • 13.2 соток
+                        </div>
+                        <div class="ready-price">9 510 000 ₽</div>
+                        
+                        <div class="type-features">
+                            <span class="feature"><i class="fas fa-home"></i> 1 этаж</span>
+                            <span class="feature"><i class="fas fa-ruler"></i> 140 м²</span>
+                            <span class="feature"><i class="fas fa-umbrella-beach"></i> с террасой</span>
+                        </div>
+                        
+                        <p>Предчистовая + терраса: <strong>67 930 ₽/м²</strong><br>
+                        Полная стоимость: <strong>9 510 000 ₽</strong></p>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(41, 128, 185, 0.1); border-radius: 10px;">
+                            <p><strong>Ипотека 6% на 20 лет:</strong></p>
+                            <p>Первый взнос: <strong>1 902 000 ₽</strong> (20%)</p>
+                            <p>Ежемесячный платёж: <strong>57 060 ₽</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Калькулятор стоимости -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Калькулятор с точными параметрами</h2>
+                <p>Рассчитайте стоимость с учётом расстояний и размеров</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calc-controls">
+                    <div class="calc-group">
+                        <label><i class="fas fa-ruler-combined"></i> Площадь дома (м²)</label>
+                        <input type="range" class="calc-slider" id="areaSlider" min="50" max="200" value="120" step="10">
+                        <div class="slider-value" id="areaValue">120 м²</div>
+                    </div>
+                    
+                    <div class="calc-group">
+                        <label><i class="fas fa-home"></i> Тип дома и отделка</label>
+                        <div class="house-type-options">
+                            <label class="house-type-option selected" data-type="gasbeton-draft" data-price="60000">
+                                <input type="radio" name="houseType" value="gasbeton-draft" checked>
+                                <div class="house-type-description">
+                                    <div><strong>Газобетон (черновая)</strong></div>
+                                    <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">60 000 ₽/м² • Прочный • Теплый</div>
+                                </div>
+                                <div class="house-type-price">60 000 ₽/м²</div>
+                            </label>
+                            
+                            <label class="house-type-option" data-type="gasbeton-finished" data-price="80000">
+                                <input type="radio" name="houseType" value="gasbeton-finished">
+                                <div class="house-type-description">
+                                    <div><strong>Газобетон (под ключ)</strong></div>
+                                    <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">80 000 ₽/м² • Полная отделка</div>
+                                </div>
+                                <div class="house-type-price">80 000 ₽/м²</div>
+                            </label>
+                            
+                            <label class="house-type-option" data-type="frame" data-price="55000">
+                                <input type="radio" name="houseType" value="frame">
+                                <div class="house-type-description">
+                                    <div><strong>Каркасный (под ключ)</strong></div>
+                                    <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">55 000 ₽/м² • Быстро • Тепло</div>
+                                </div>
+                                <div class="house-type-price">55 000 ₽/м²</div>
+                            </label>
+                            
+                            <label class="house-type-option" data-type="barn" data-price="44000">
+                                <input type="radio" name="houseType" value="barn">
+                                <div class="house-type-description">
+                                    <div><strong>Барнхаус (базовый)</strong></div>
+                                    <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">44 000 ₽/м² • Современный дизайн</div>
+                                </div>
+                                <div class="house-type-price">44 000 ₽/м²</div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-group">
+                        <label><i class="fas fa-route"></i> Расстояние до города</label>
+                        <input type="range" class="calc-slider" id="distanceSlider" min="10" max="40" value="30" step="1">
+                        <div class="slider-value" id="distanceValue">30 км</div>
+                        <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                            <i class="fas fa-info-circle"></i> Влияет на стоимость коммуникаций
+                        </div>
+                    </div>
+                    
+                    <div class="calc-group">
+                        <label><i class="fas fa-water"></i> Выберите береговую линию</label>
+                        <div class="plot-options">
+                            <label class="plot-option selected" data-value="1400000">
+                                <input type="radio" name="plot" value="1400000" checked>
+                                <div class="plot-description">
+                                    <div><strong>1-я линия (50 м до воды)</strong></div>
+                                    <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">Расстояние до воды: 50 м • До города: 30 км • 7 соток</div>
+                                </div>
+                                <div class="plot-price-small">1 400 000 ₽</div>
+                            </label>
+                            
+                            <label class="plot-option" data-value="1100000">
+                                <input type="radio" name="plot" value="1100000">
+                                <div class="plot-description">
+                                    <div><strong>2-я линия (150 м до воды)</strong></div>
+                                    <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">Расстояние до воды: 150 м • До города: 30 км • 7 соток</div>
+                                </div>
+                                <div class="plot-price-small">1 100 000 ₽</div>
+                            </label>
+                            
+                            <label class="plot-option" data-value="1000000">
+                                <input type="radio" name="plot" value="1000000">
+                                <div class="plot-description">
+                                    <div><strong>Эконом класс</strong></div>
+                                    <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">До города: 30 км • 7 соток</div>
+                                </div>
+                                <div class="plot-price-small">1 000 000 ₽</div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-group">
+                        <label><i class="fas fa-cogs"></i> Дополнительные опции</label>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                                <input type="checkbox" id="optionTerrace" checked>
+                                <span>Терраса 20 м² (+200 000 ₽)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                                <input type="checkbox" id="optionSauna">
+                                <span>Сауна 8 м² (+250 000 ₽)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                                <input type="checkbox" id="optionGarage">
+                                <span>Гараж 24 м² (+350 000 ₽)</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                                <input type="checkbox" id="optionFireplace">
+                                <span>Камин (+150 000 ₽)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calc-result-box">
+                    <h3><i class="fas fa-calculator"></i> Итого стоимость проекта</h3>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.15); padding: 1.2rem; border-radius: 10px; margin: 1.5rem 0; text-align: left;">
+                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span><i class="fas fa-route"></i> Участок (7 соток):</span>
+                            <span id="plotCostResult">1 400 000 ₽</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span><i class="fas fa-ruler-combined"></i> Дом (<span id="areaResult">120</span> м²):</span>
+                            <span id="houseCostResult">7 200 000 ₽</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span><i class="fas fa-cogs"></i> Опции:</span>
+                            <span id="optionsCost">200 000 ₽</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0; padding-top: 0.5rem; font-weight: bold; font-size: 1.1rem;">
+                            <span><i class="fas fa-check-circle"></i> ВСЕГО:</span>
+                            <span id="totalCostResult">8 800 000 ₽</span>
+                        </div>
+                    </div>
+                    
+                    <div class="total-price" id="totalPrice">8 800 000 ₽</div>
+                    
+                    <div style="margin: 2rem 0;">
+                        <div class="family-badge" style="margin: 0 auto 1rem; display: inline-flex;">
+                            <i class="fas fa-child"></i> Для семей с детьми до 7 лет
+                        </div>
+                        <h4><i class="fas fa-percentage"></i> Ипотека 6% на 20 лет:</h4>
+                        <div style="font-size: 1.8rem; font-weight: 700; margin: 1rem 0; color: var(--accent);" id="monthlyPayment">52 800 ₽/мес</div>
+                        <div style="font-size: 1rem; margin-bottom: 1.5rem; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 8px;">
+                            Первый взнос 20%: <span id="initialPayment">1 760 000 ₽</span>
+                        </div>
+                    </div>
+                    
+                    <button class="cta-button" id="requestCalculation" style="width: 100%; background: var(--telegram); border-color: var(--telegram);">
+                        <i class="fab fa-telegram"></i> Получить точный расчёт
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ипотека -->
+    <section class="mortgage-section" id="mortgage">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ипотека с выгодными параметрами</h2>
+                <p>Рассчитайте оптимальные условия для вашей семьи</p>
+            </div>
+            
+            <div class="mortgage-cards">
+                <div class="mortgage-card">
+                    <h3><i class="fas fa-route"></i> Семейная ипотека</h3>
+                    <div class="distance-badge" style="margin: 0 auto 1rem;">
+                        <i class="fas fa-child"></i> Дети до 7 лет
+                    </div>
+                    <p>Ставка 6% на 20 лет. Первый взнос от 20%</p>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                        <p><i class="fas fa-check-circle"></i> Срок: 20 лет (240 мес)</p>
+                        <p><i class="fas fa-check-circle"></i> Ставка: 6% годовых</p>
+                    </div>
+                </div>
+                
+                <div class="mortgage-card">
+                    <h3><i class="fas fa-ruler-combined"></i> Госпрограмма</h3>
+                    <div class="size-badge" style="margin: 0 auto 1rem;">
+                        <i class="fas fa-home"></i> Государственная поддержка
+                    </div>
+                    <p>Субсидирование ставки для доступного жилья</p>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                        <p><i class="fas fa-check-circle"></i> Субсидия до 5%</p>
+                        <p><i class="fas fa-check-circle"></i> Льготные условия</p>
+                    </div>
+                </div>
+                
+                <div class="mortgage-card">
+                    <h3><i class="fas fa-calculator"></i> Наше содействие</h3>
+                    <div class="quality-badge" style="margin: 0 auto 1rem; background: linear-gradient(135deg, #ff6b35 0%, #ff8e53 100%);">
+                        <i class="fas fa-hands-helping"></i> Полное сопровождение
+                    </div>
+                    <p>Поможем собрать документы и оформить ипотеку</p>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                        <p><i class="fas fa-check-circle"></i> Консультация бесплатно</p>
+                        <p><i class="fas fa-check-circle"></i> Помощь с документами</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-hands-helping"></i> О нас</h2>
+                <p>Помогаем семьям обрести дом у озера с оптимальными условиями</p>
+            </div>
+            
+            <div class="about-content">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem;">
+                        <i class="fas fa-shield-alt"></i> Помощь в одобрении ипотеки
+                    </h3>
+                    
+                    <div class="quality-badge" style="margin-bottom: 1.5rem; background: var(--distance-gradient);">
+                        <i class="fas fa-check-circle"></i> Аккредитованный партнер ведущих банков
+                    </div>
+                    
+                    <p style="margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.6;">
+                        Мы работаем напрямую с банками-партнерами, что значительно повышает шансы на одобрение ипотеки 
+                        и ускоряет процесс оформления. Наши специалисты помогут:
+                    </p>
+                    
+                    <div style="background: rgba(41, 128, 185, 0.08); padding: 1.2rem; border-radius: 10px; margin-bottom: 2rem;">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check" style="color: var(--quality); position: absolute; left: 0;"></i>
+                                Подобрать оптимальную ипотечную программу
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check" style="color: var(--quality); position: absolute; left: 0;"></i>
+                                Правильно собрать и оформить документы
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check" style="color: var(--quality); position: absolute; left: 0;"></i>
+                                Получить предварительное одобрение за 1 день
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check" style="color: var(--quality); position: absolute; left: 0;"></i>
+                                Сопровождать сделку до получения ключей
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.2rem; background: var(--light); border-radius: 10px; border-left: 4px solid var(--quality);">
+                        <p style="margin: 0; font-style: italic; font-size: 0.95rem;">
+                            <i class="fas fa-lightbulb" style="color: var(--accent); margin-right: 10px;"></i>
+                            <strong>Статистика успеха:</strong> Наши клиенты получают одобрение ипотеки в <strong>93% случаев</strong> благодаря 
+                            предварительной проверке документов и правильному подбору банка.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem;">
+                        <i class="fas fa-university"></i> Банки-партнеры
+                    </h3>
+                    
+                    <p style="margin-bottom: 2rem; color: #666; font-size: 1rem;">
+                        Мы являемся аккредитованными партнерами ведущих банков России, 
+                        что позволяет предлагать нашим клиентам лучшие условия по ипотеке.
+                    </p>
+                    
+                    <div class="banks-grid">
+                        <!-- Сбербанк -->
+                        <div class="bank-logo bank-sber">
+                            <div class="bank-content">
+                                <div class="bank-icon">
+                                    <i class="fas fa-piggy-bank" style="color: var(--sber);"></i>
+                                </div>
+                                <div class="bank-name">СберБанк</div>
+                                <div class="bank-status">Аккредитованный партнер</div>
+                            </div>
+                        </div>
+                        
+                        <!-- ВТБ -->
+                        <div class="bank-logo bank-vtb">
+                            <div class="bank-content">
+                                <div class="bank-icon">
+                                    <i class="fas fa-building" style="color: var(--vtb);"></i>
+                                </div>
+                                <div class="bank-name">ВТБ</div>
+                                <div class="bank-status">Официальный партнер</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Альфа-Банк -->
+                        <div class="bank-logo bank-alfa">
+                            <div class="bank-content">
+                                <div class="bank-icon">
+                                    <i class="fas fa-chart-line" style="color: var(--alfa);"></i>
+                                </div>
+                                <div class="bank-name">Альфа-Банк</div>
+                                <div class="bank-status">Партнерская программа</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Софком Банк -->
+                        <div class="bank-logo bank-sofkom">
+                            <div class="bank-content">
+                                <div class="bank-icon">
+                                    <i class="fas fa-handshake" style="color: var(--sofkom);"></i>
+                                </div>
+                                <div class="bank-name">Софком Банк</div>
+                                <div class="bank-status">Аккредитованный партнер</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="family-badge" style="display: inline-flex; margin-top: 2rem; font-size: 0.9rem;">
+                        <i class="fas fa-child"></i> Специализируемся на семейной ипотеке 6%
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; text-align: center;">
+                <a href="#calculator" class="cta-button" style="margin-right: 1rem;">
+                    <i class="fas fa-calculator"></i> Рассчитать ипотеку
+                </a>
+                <a href="https://t.me/vlast_truda_dom" target="_blank" class="cta-button" style="background: var(--telegram); border-color: var(--telegram);">
+                    <i class="fab fa-telegram"></i> Бесплатная консультация
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating buttons -->
+    <div class="floating-buttons">
+        <a href="tel:8927779224" class="floating-btn floating-phone">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://t.me/vlast_truda_dom" target="_blank" class="floating-btn floating-telegram">
+            <i class="fab fa-telegram"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo" style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">
+                        <i class="fas fa-route"></i>
+                        <i class="fas fa-ruler-combined"></i>
+                        ДомУОзера
+                    </div>
+                    <p style="font-size: 0.9rem;">Точные расстояния, участки 7 соток, лучшие цены</p>
+                    <div class="social-links" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://t.me/vlast_truda_dom" target="_blank" class="social-link pulse" style="width: 35px; height: 35px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; border: 1px solid rgba(255,255,255,0.2);">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-contacts">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-route"></i> Контакты</h3>
+                    <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:8927779224" style="color: white; text-decoration: none;">8-927-779-22-24</a>
+                    </p>
+                    <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">
+                        <i class="fab fa-telegram"></i>
+                        <a href="https://t.me/vlast_truda_dom" target="_blank" style="color: white; text-decoration: none;">@vlast_truda_dom</a>
+                    </p>
+                    <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        пос. Власть Труда, Самарская обл.
+                    </p>
+                </div>
+                <div class="footer-hours">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-ruler-combined"></i> Часы работы</h3>
+                    <p style="margin-bottom: 0.5rem; font-size: 0.9rem;"><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 19:00</p>
+                    <p style="margin-bottom: 0.5rem; font-size: 0.9rem;"><i class="fas fa-clock"></i> Сб-Вс: 10:00 - 17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 0.9rem;">© 2024 ДомУОзера. Все права защищены.</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.8;">
+                    <i class="fas fa-info-circle"></i> Ипотека предоставляется банками-партнёрами по государственной программе "Семейная ипотека" для семей с детьми до 7 лет
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Калькулятор стоимости
+        const areaSlider = document.getElementById('areaSlider');
+        const distanceSlider = document.getElementById('distanceSlider');
+        const areaValue = document.getElementById('areaValue');
+        const distanceValue = document.getElementById('distanceValue');
+        const plotCostResult = document.getElementById('plotCostResult');
+        const houseCostResult = document.getElementById('houseCostResult');
+        const areaResult = document.getElementById('areaResult');
+        const optionsCost = document.getElementById('optionsCost');
+        const totalCostResult = document.getElementById('totalCostResult');
+        const totalPrice = document.getElementById('totalPrice');
+        const monthlyPayment = document.getElementById('monthlyPayment');
+        const initialPayment = document.getElementById('initialPayment');
+        
+        // Константы
+        const INITIAL_PAYMENT_PERCENT = 20;
+        const DISTANCE_FACTOR = 5000;
+        
+        // Типы домов
+        const houseTypeOptions = document.querySelectorAll('.house-type-option');
+        let selectedHouseType = 'gasbeton-draft';
+        let selectedHousePrice = 60000;
+        
+        // Обработчик выбора типа дома
+        houseTypeOptions.forEach(option => {
+            const radio = option.querySelector('input[type="radio"]');
+            
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    selectedHouseType = this.value;
+                    selectedHousePrice = parseInt(option.dataset.price);
+                    
+                    houseTypeOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    
+                    updateCalculation();
+                }
+            });
+        });
+        
+        // Дополнительные опции
+        const options = {
+            terrace: document.getElementById('optionTerrace'),
+            sauna: document.getElementById('optionSauna'),
+            garage: document.getElementById('optionGarage'),
+            fireplace: document.getElementById('optionFireplace')
+        };
+        
+        const optionPrices = {
+            terrace: 200000,
+            sauna: 250000,
+            garage: 350000,
+            fireplace: 150000
+        };
+        
+        // Радиокнопки участков
+        const plotOptions = document.querySelectorAll('.plot-option');
+        let selectedPlotPrice = 1400000;
+        let selectedPlotDistance = 30;
+        
+        // Обработчик выбора участка
+        plotOptions.forEach(option => {
+            const radio = option.querySelector('input[type="radio"]');
+            
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    selectedPlotPrice = parseInt(this.value);
+                    selectedPlotDistance = 30;
+                    distanceSlider.value = 30;
+                    
+                    plotOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    
+                    updateCalculation();
+                }
+            });
+        });
+        
+        function updateCalculation() {
+            const area = parseInt(areaSlider.value);
+            const distance = parseInt(distanceSlider.value);
+            const plotPrice = selectedPlotPrice;
+            
+            const housePrice = area * selectedHousePrice;
+            const distanceExtra = Math.max(0, (distance - 30)) * DISTANCE_FACTOR;
+            
+            let optionsPrice = 0;
+            if (options.terrace.checked) optionsPrice += optionPrices.terrace;
+            if (options.sauna.checked) optionsPrice += optionPrices.sauna;
+            if (options.garage.checked) optionsPrice += optionPrices.garage;
+            if (options.fireplace.checked) optionsPrice += optionPrices.fireplace;
+            
+            const total = plotPrice + housePrice + optionsPrice + distanceExtra;
+            
+            areaValue.textContent = area + ' м²';
+            distanceValue.textContent = distance + ' км';
+            areaResult.textContent = area;
+            
+            plotCostResult.textContent = `${formatPrice(plotPrice)} ₽`;
+            houseCostResult.textContent = formatPrice(housePrice) + ' ₽';
+            optionsCost.textContent = formatPrice(optionsPrice) + ' ₽';
+            totalCostResult.textContent = formatPrice(total) + ' ₽';
+            totalPrice.textContent = formatPrice(total) + ' ₽';
+            
+            const initialPaymentAmount = total * (INITIAL_PAYMENT_PERCENT / 100);
+            initialPayment.textContent = formatPrice(Math.round(initialPaymentAmount)) + ' ₽';
+            
+            const loanAmount = total - initialPaymentAmount;
+            const monthlyRate = 0.06 / 12;
+            const months = 20 * 12;
+            
+            const monthlyPaymentAmount = loanAmount * 
+                (monthlyRate * Math.pow(1 + monthlyRate, months)) / 
+                (Math.pow(1 + monthlyRate, months) - 1);
+            
+            monthlyPayment.textContent = formatPrice(Math.round(monthlyPaymentAmount)) + ' ₽/мес';
+        }
+        
+        function formatPrice(price) {
+            return Math.round(price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
+        
+        areaSlider.addEventListener('input', updateCalculation);
+        distanceSlider.addEventListener('input', updateCalculation);
+        
+        Object.values(options).forEach(option => {
+            option.addEventListener('change', updateCalculation);
+        });
+        
+        updateCalculation();
+        
+        // Кнопка получения расчета в Telegram
+        document.getElementById('requestCalculation').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const area = areaSlider.value;
+            const distance = distanceSlider.value;
+            
+            let houseTypeName = '';
+            if (selectedHouseType === 'gasbeton-draft') {
+                houseTypeName = 'Газобетон (черновая)';
+            } else if (selectedHouseType === 'gasbeton-finished') {
+                houseTypeName = 'Газобетон (под ключ)';
+            } else if (selectedHouseType === 'frame') {
+                houseTypeName = 'Каркасный (под ключ)';
+            } else {
+                houseTypeName = 'Барнхаус (базовый)';
+            }
+            
+            let plotType = '';
+            if (selectedPlotPrice === 1400000) {
+                plotType = '1-я береговая линия (50 м до воды)';
+            } else if (selectedPlotPrice === 1100000) {
+                plotType = '2-я береговая линия (150 м до воды)';
+            } else {
+                plotType = 'Эконом класс';
+            }
+            
+            const total = totalPrice.textContent;
+            const monthly = monthlyPayment.textContent;
+            const initial = initialPayment.textContent;
+            
+            const message = `Здравствуйте! Хочу получить детальный расчёт проекта:\n\n` +
+                          `• Тип дома: ${houseTypeName}\n` +
+                          `• Площадь дома: ${area} м²\n` +
+                          `• Расстояние до города: ${distance} км\n` +
+                          `• Участок: ${plotType} (7 соток)\n` +
+                          `• Общая стоимость: ${total}\n` +
+                          `• Первый взнос: ${initial}\n` +
+                          `• Ежемесячный платеж: ${monthly}\n\n` +
+                          `Прошу выслать подробную смету с учётом всех расстояний и размеров.`;
+            
+            window.open(`https://t.me/vlast_truda_dom?text=${encodeURIComponent(message)}`, '_blank');
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    window.scrollTo({
+                        top: targetElement.offsetTop - headerHeight - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Анимация карточек при прокрутке
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-card');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.plot-card, .type-card, .ready-card, .mortgage-card, .bank-logo').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Эффект пульсации для CTA кнопок
+        setInterval(() => {
+            document.querySelectorAll('.pulse').forEach(btn => {
+                btn.classList.toggle('pulse');
+                setTimeout(() => btn.classList.toggle('pulse'), 100);
+            });
+        }, 4000);
+    </script>
+</body>
+</html>
